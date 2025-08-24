@@ -92,10 +92,59 @@ function remainder(x, y) {
 
 let rem = remainder(5, 3);
 console.log(`5 を 3 で割った余りは ${rem} です。`);
-// Q10 スコープ
+// Q10
 function foo() {
   let x = 1;
 }
-
 // エラーになる理由：スコープにより foo の外から x を参照できないから
 
+//応用編
+// Q1
+let randomNum = Math.floor(Math.random() * 10);
+console.log(randomNum);
+// Q2-1
+setTimeout(function() {
+  console.log('Hello World!');
+}, 3000);
+// Q2-2
+function printName(firstName, formatter) {
+  console.log(formatter(firstName));
+}
+
+const addIntro = (name) => '私の名前は' + name + 'です。';
+
+printName('相場', addIntro); 
+// Q3
+let num = 5;
+
+if (num > 0) {
+  console.log('num is greater than 0');
+} else if (num < 0) {
+  console.log('num is less than 0');
+} else {
+  console.log('num is 0');
+}
+// Q4
+let numbers = [];
+
+for (let i = 0; i < 100; i++) {
+  numbers.push(i);
+}
+
+console.log(numbers);
+// Q5
+let mixed = [4, '2', 5, '8', '9', 0, 1];
+
+for (let i = 0; i < mixed.length; i++) {
+  let item = mixed[i];
+
+  if (typeof item === 'number') {
+    if (item % 2 === 0) {
+      console.log('even');
+    } else {
+      console.log('odd');
+    }
+  } else {
+    console.log('not number');
+  }
+}
